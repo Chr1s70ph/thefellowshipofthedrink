@@ -1,54 +1,94 @@
-body, html {
+:root {
+	--background_gradient_center: #fff;
+	--background_gradient_outer: #515151;
+}
+
+body,
+html {
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: Helvatica, sans-serif;
+	background-color: var(--background_gradient_outer);
 }
 
-body {
-	background: radial-gradient(#fff, #eee);
+.main_page_content {
 	margin: 0;
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	height: 100%;
+}
+
+div.background_gradient {
+	background: radial-gradient(var(--background_gradient_center), var(--background_gradient_outer));
+	background-attachment: fixed;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
 }
 
 ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 3.15rem;
+	list-style-type: none;
+	z-index: 3;
+	margin: 0;
+	padding: 0;
+	background-color: #333;
 }
 
-ul.topnav li {float: left;}
+ul.topnav li {
+	float: left;
+}
 
 ul.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	background-color: #333;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+ul.topnav li a:hover:not(.active) {
+	background-color: #111;
+}
 
-ul.topnav li a.active {background-color: #d7ad17;}
+ul.topnav li a.active {
+	background-color: #d7ad17;
+}
 
-ul.topnav li.right {float: right;}
+ul.topnav li.right {
+	float: right;
+}
 
 @media screen and (max-width: 600px) {
-  ul.topnav li.right,
-  ul.topnav li {float: none;}
+
+	ul.topnav li.right,
+	ul.topnav li {
+		float: none;
+	}
 }
 
 .container {
 	width: calc(100% - 2rem);
-	height: calc(100% - 2rem);
+	height: 100%;
 	display: flex;
-	padding: 1rem;
+	padding-top: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 0;
+	padding-left: 1rem;
 	background-image: url("./images/beer.png");
 	background-position: center;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: contain;
+	overflow: auto;
 }
 
 .bg-text {
@@ -56,7 +96,7 @@ ul.topnav li.right {float: right;}
 	flex-flow: column;
 	z-index: 2;
 	width: 80%;
-	height: fit-content;
+	height: auto;
 	text-align: center;
 	border: 1px solid white;
 	border-radius: 5px;
@@ -64,11 +104,11 @@ ul.topnav li.right {float: right;}
 	padding: 1rem;
 	background-color: rgba(0, 0, 0, 0.2);
 	color: white;
-	 /* Add the blur effect */
-	 backdrop-filter: blur(3px);
+	/* Add the blur effect */
+	backdrop-filter: blur(3px);
 }
 
-.bg-text h1 {
+.bg-text h1, h2 {
 	height: auto;
 	flex: 1;
 }
