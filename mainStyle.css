@@ -1,6 +1,7 @@
 :root {
 	--background_gradient_center: #fff;
-	--background_gradient_outer: #b0acac;
+	--background_gradient_outer: #515151;
+	--footer-height:
 }
 
 body,
@@ -13,10 +14,12 @@ html {
 	background-color: var(--background_gradient_outer);
 }
 
-body {
+.main_page_content {
 	margin: 0;
 	display: flex;
 	flex-flow: column;
+	width: 100%;
+	height: 100%;
 }
 
 div.background_gradient {
@@ -24,13 +27,15 @@ div.background_gradient {
 	background-attachment: fixed;
 	padding: 0;
 	margin: 0;
+	height: 100%;
+	overflow: hidden;
 }
 
 ul.topnav {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	height: 3rem;
+	height: 3.15rem;
 	list-style-type: none;
 	z-index: 3;
 	margin: 0;
@@ -48,6 +53,7 @@ ul.topnav li a {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	background-color: #333;
 }
 
 ul.topnav li a:hover:not(.active) {
@@ -72,7 +78,7 @@ ul.topnav li.right {
 
 .container {
 	width: calc(100% - 2rem);
-	height: calc(100% - 4rem);
+	height: 100%;
 	display: flex;
 	padding-top: 1rem;
 	padding-right: 1rem;
@@ -83,6 +89,7 @@ ul.topnav li.right {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: contain;
+	overflow: auto;
 }
 
 .bg-text {
@@ -90,12 +97,11 @@ ul.topnav li.right {
 	flex-flow: column;
 	z-index: 2;
 	width: 80%;
-	height: fit-content;
+	height: auto;
 	text-align: center;
 	border: 1px solid white;
 	border-radius: 5px;
 	margin: auto;
-	margin-bottom: 1rem;
 	padding: 1rem;
 	background-color: rgba(0, 0, 0, 0.2);
 	color: white;
@@ -103,7 +109,7 @@ ul.topnav li.right {
 	backdrop-filter: blur(3px);
 }
 
-.bg-text h1 {
+.bg-text h1, h2 {
 	height: auto;
 	flex: 1;
 }
